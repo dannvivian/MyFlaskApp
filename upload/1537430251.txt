@@ -1,0 +1,43 @@
+
+    Xshell 5 简体中文绿色便携版 - 免费的 SSH/SFTP 终端模拟器
+————————————————
+
+    更新时间：2017/10/23
+    当前版本：Xshell 5 Build 1333
+    
+    === 1. 使用说明 ===
+    
+        ==> 基于官方原版制作便携版，直接运行 XshellPortable.exe 请勿修改文件名，否则无法保持便携化！
+        
+        ==> 若运行报错或没有反应，请务必手动安装以下两个 VC 运行库：
+	
+                Visual C++ 2008 SP1 运行库：https://download.microsoft.com/download/5/9/e/59e74271-2b59-49a1-b955-96b69cc34f38/vcredist_x86.exe
+                Visual C++ 2012 运行库 (vcredist_x86 32位版)：https://download.microsoft.com/download/9/C/D/9CD480DC-0301-41B0-AAAB-FE9AC1F60237/VSU4/vcredist_x86.exe
+
+        ==> 关于启动时的错误弹窗: Initialize Flexnet Service failed / Error code: 50003 的提示：
+        
+        这是新版 Xshell 需要 FlexNet Licensing Service 来验证授权，而便携版并没有安装此服务，实际并不影响使用，但如果你介意的话，
+        
+        请到这里查看解决方案: https://www.portablesoft.org/flexnet-licensing-service/
+
+    === 2. 特别提醒 ===
+    
+        由于新版 Xshell 的配置目录结构发生变化，如果之前使用过我做的 Xshell 5 1124 版本之前的便携版，需要转移配置文件：
+        
+            ==> 将原便携版 Data\Settings\Sessions\Xshell\ 目录下的「所有文件」复制或剪切到 Data\Settings\NetSarang\Xshell\Sessions\ 目录下
+    
+        注意在修改之前，强烈建议对之前的配置做好备份，以防出错！！！
+    
+    === 3. 其他重要说明 ===
+    
+        ==> 请务必另行备份登录服务器需要的密码、 Public Key 密钥及密钥密码，以免 Xshell 便携版发生异常导致配置丢失；
+        ==> 如果你要在另一台电脑上使用本便携版，Public Key 的密码会被重置，需要重新输入密钥密码，目前无解，这应该是出于安全考虑；
+        ==> Xshell 便携版添加了命令行参数支持，对 XshellPortable.exe 设置的参数将在运行时传递给 Xshell 主程序；
+        ==> 本便携版不支持自定义会话文件夹路径，始终保存 Data\Settings 文件夹下，请尽量不要修改，以免出错；
+        ==> 运行结束后请务必正常退出 Xshell 主程序，以保持便携化，否则可能发生异常或混乱。
+
+    详细介绍：https://www.portablesoft.org/xshell/
+    
+————————————————
+    黯然过客为您绿化、请访问我的博客：https://www.portablesoft.org/
+    绿化有问题？有想要绿化的软件？请联系我：admin@portablesoft.org
