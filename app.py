@@ -48,7 +48,7 @@ def insert_password(name, password, school):
 
 @app.route('/upload')
 def upload_file():
-    return render_template('upload.html')
+    return render_template("upload.html")
 # 上传文件以及首页地址
 
 
@@ -56,13 +56,15 @@ def upload_file():
 def upload_files():
     if request.method == 'POST':
         f = request.files['file']     #此处获取文件
-        url = request.form['weburl']     #此处获取输入的网址
+        # url = request.form['weburl']     #此处获取输入的网址
         # excelname = request.form['excelname']
         # print(f.filename)
         f.save(secure_filename(f.filename))
         mytools.uploadExcel(f.filename,'abc')
         os.remove(f.filename)      #存到本地之后再删除掉
         return f.filename
+
+    
 if __name__ == '__main__':
     app.run()
     # 返回上传结果
