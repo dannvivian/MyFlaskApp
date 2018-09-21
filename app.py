@@ -60,11 +60,11 @@ def upload_files():
         # excelname = request.form['excelname']
         # print(f.filename)
         f.save(secure_filename(f.filename))
-        mytools.uploadExcel(f.filename,'abc')
+        mytools.uploadExcel(f.filename,'abcxx')
         os.remove(f.filename)      #存到本地之后再删除掉
         return f.filename
 
-    
+
 if __name__ == '__main__':
     app.run()
     # 返回上传结果
