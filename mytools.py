@@ -60,8 +60,10 @@ def uploadExcel(filename,excelname):
         values = (id,steps)
         # 执行sql语句
         cur.execute(query, values)
-    now = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    cur.execute('insert into history (tablename,times) values (11,22)')
+    now = datetime.datetime.now().strftime('%Y%m%d%H%M%S')
+    times = now+'x'
+    cur.execute(
+        """insert into history (tablename,times) values ('{0}','{1}')""".format(excelname,now))
     cur.close()
     conn.commit()
     conn.close()
@@ -76,7 +78,7 @@ if __name__ == '__main__':
     # print(x)
     name1='myname.xlsx'
 
-    x= uploadExcel("01.xlsx",'example')
+    x= uploadExcel("01.xlsx",'examplesss')
 
 # @app.route('/temp',methods=['POST'])
 # def myreg():

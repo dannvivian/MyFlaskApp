@@ -4,6 +4,8 @@ import pymysql
 import os
 from flask_bootstrap import Bootstrap
 from werkzeug.utils import secure_filename
+import time
+import datetime
 app = Flask(__name__)
 bootstrap = Bootstrap(app)
 
@@ -59,8 +61,11 @@ def upload_files():
         # url = request.form['weburl']     #此处获取输入的网址
         # excelname = request.form['excelname']
         # print(f.filename)
+
         f.save(secure_filename(f.filename))
-        mytools.uploadExcel(f.filename,'abcxx')
+        now = datetime.datetime.now().strftime('%Y%m%d%H%M%S')
+        times = now + 'x'
+        mytools.uploadExcel(f.filename,times)
         os.remove(f.filename)      #存到本地之后再删除掉
         return f.filename
 
@@ -68,3 +73,4 @@ def upload_files():
 if __name__ == '__main__':
     app.run()
     # 返回上传结果
+
