@@ -9,7 +9,7 @@ import datetime
 
 def islogin(xname,xpasswd):
         # 打开数据库连接
-        db = pymysql.connect("98.142.139.32", "wordpress", "TY0812MYSQL", "testdb")
+        db = pymysql.connect("104.224.190.153", "root", "123456", "testdb")
 
         # 使用cursor()方法获取操作游标
         cur = db.cursor()
@@ -40,9 +40,9 @@ def uploadExcel(filename,excelname):
     book = xlrd.open_workbook(filename)
     sheet = book.sheet_by_name("Sheet1")
     conn = pymysql.connect(
-        host='98.142.139.32',
-        user='wordpress',
-        passwd='TY0812MYSQL',
+        host='104.224.190.153',
+        user='root',
+        passwd='123456',
         db='uploadfiles',
         port=3306,
         charset='utf8'

@@ -30,7 +30,7 @@ def myindex():
 
 @app.route('/history')
 def index():
-    conn = pymysql.connect(host='98.142.139.32', user='wordpress', password='TY0812MYSQL', db='uploadfiles', charset='utf8')
+    conn = pymysql.connect(host='104.224.190.153', user='root', password='123456', db='testdb', charset='utf8')
     cur = conn.cursor()
     sql = "SELECT * FROM history"
     cur.execute(sql)
@@ -39,13 +39,13 @@ def index():
     return render_template('history.html',u=u)
 
 
-def insert_password(name, password, school):
-    db = pymysql.connect("localhost", "root", "Mysql123", "TESTDB")
-    c = db.cursor()
-    cursor = c.execute("SELECT id, name, password, school from user")
-    c.execute("INSERT INTO user (name, password, school)VALUES (? ,? ,?)", (name, password, school))
-    c.commit()
-    c.close()
+# def insert_password(name, password, school):
+#     db = pymysql.connect("localhost", "root", "Mysql123", "TESTDB")
+#     c = db.cursor()
+#     cursor = c.execute("SELECT id, name, password, school from user")
+#     c.execute("INSERT INTO user (name, password, school)VALUES (? ,? ,?)", (name, password, school))
+#     c.commit()
+#     c.close()
 
 
 @app.route('/upload')
@@ -67,10 +67,9 @@ def upload_files():
         times = now + 'x'
         mytools.uploadExcel(f.filename,times)
         os.remove(f.filename)      #存到本地之后再删除掉
-        return f.filename
-
+        return f.filename+'上传成功'
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0',port=80,debug=True)
     # 返回上传结果
 
